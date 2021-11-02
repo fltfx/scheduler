@@ -9,6 +9,7 @@ export default function InterviewerList(props) {
   // const interviewerClass = classNames("interviewers__item", {
   //   "interviewers__item--selected": selected
   // });
+  console.log("value", value);
 
   const parsedInterviewers = interviewers.map(eachInterviewer => 
   <InterviewerListItem 
