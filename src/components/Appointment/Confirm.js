@@ -6,7 +6,6 @@ import Button from "components/Button";
 
 export default function Confirm(props) {
   const { message, onConfirm, onCancel } = props;
-  //const [day, setDay] = useState("Monday");
 
   return (
 <main className="appointment__card appointment__card--confirm">

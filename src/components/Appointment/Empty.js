@@ -6,8 +6,6 @@ import { useState } from "react";
 
 export default function Empty(props) {
   const { onAdd } = props;
-  //const [day, setDay] = useState("Monday");
-
   return (
     <main className="appointment__add">
       <img

@@ -5,7 +5,6 @@ import { useState } from "react";
 
 export default function Error(props) {
   const { message, onClose } = props;
-  //const [day, setDay] = useState("Monday");
 
   return (
 <main className="appointment__card appointment__card--error">

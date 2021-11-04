@@ -6,7 +6,6 @@ import { useState } from "react";
 
 export default function Header(props) {
   const { time } = props;
-  //const [day, setDay] = useState("Monday");
 
   return (
     <header className="appointment__time">

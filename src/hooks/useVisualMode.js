@@ -1,31 +1,29 @@
 import { useState, useEffect } from "react";
 
 export default function useVisualMode(initial) {
-  const [mode, setMode] = useState(initial);
+
+
   const [history, setHistory] = useState([initial]); // This line is new!
 
-  function transition(newMode, replace = false) {
+  function transition(mode, replace = false) {
     console.log(history);
     if (replace === true) {
-      console.log("lastone:",history[history.length - 1]);
-      history[history.length - 1] = newMode;
-      console.log(newMode);
-      console.log(history);
+      setHistory(prev => [...prev.slice(0, prev.length-1), mode]);
     } else {
-      history.push(newMode);
+      setHistory(prev => [...prev, mode]);
     }
-    setMode(newMode);
   }
 
   function back() {
-    console.log("line21:",history);
-    history.pop();
-    console.log("line23:",history);
-    if (history.length >= 1){
-      const prevMode = history[history.length - 1];
-      setMode(prevMode);
+    if (history.length < 2){
+      return;
     }
+    setHistory(prev => [...prev.slice(0, history.length-1)])
   }
 
-  return { mode, transition, back };
+  return { mode: history[history.length-1], transition, back };
 }
+
+// myArray = [1,2,3,4,5];
+// myArray.slice(0,2); //==[1,2]
+// myArray.slice(0,myArray.length -1); //=== [1,2,3,4]

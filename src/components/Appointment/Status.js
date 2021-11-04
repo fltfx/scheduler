@@ -5,7 +5,6 @@ import { useState } from "react";
 
 export default function Status(props) {
   const { message } = props;
-  //const [day, setDay] = useState("Monday");
 
   return (
     <main className="appointment__card appointment__card--status">
