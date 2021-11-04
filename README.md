@@ -23,3 +23,5 @@ npm run storybook
 ```
 
 # Screenshots
+!["Appointment sample view and form"](https://github.com/fltfx/scheduler/blob/master/docs/appointment-view-form.png)
+!["Appointment edit and delete"](https://github.com/fltfx/scheduler/blob/master/docs/appointment-edit-delete.png)
