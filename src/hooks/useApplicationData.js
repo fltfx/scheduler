@@ -38,13 +38,15 @@ export default function useApplicationData(initial) {
     console.log(interview);
     return axios.put(`/api/appointments/${id}`, {interview})   
       .then((response) => updateSpots(state, appointments, id))
-      .then(response => setState({
-        ...state,
-        appointments
-      }
-      )
-      );
-  }
+      .then((response) => {
+        //response = the returned days array from updateSpots
+        setState({
+          ...state,
+          appointments,
+          days: response
+        });
+      });
+    }
 
 
   //cancelInterview
@@ -61,11 +63,14 @@ export default function useApplicationData(initial) {
     console.log(appointments);
     return axios.delete(`/api/appointments/${id}`)
       .then((response) => updateSpots(state, appointments, id))    
-      .then(response => setState({
+      .then((response) => {
+        //response = the returned days array from updateSpots
+        setState({
           ...state,
-          appointments
-        }
-        ));
+          appointments,
+          days: response
+        });
+      });
   }
 
   function updateSpots(state, appointments, id) {

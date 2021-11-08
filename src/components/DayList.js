@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 export default function DayList(props) {
   const { days, value, onChange } = props;
-
+  console.log("days",days);
   const parsedDays = days.map(eachDay => <DayListItem key={eachDay.id} {...eachDay} selected={eachDay.name === value} setDay={onChange} />);
   return (
     <ul>
